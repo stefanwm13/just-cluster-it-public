@@ -1,0 +1,53 @@
+/home/stefan/experiments2/rl-cluster-icml/scripts/train.py --algo ppo --model modelName2
+
+Namespace(algo='ppo', batch_size=256, clip_eps=0.1, discount=0.99, entropy_coef=0.005, env=None, epochs=4, frames=10000000, frames_per_proc=256, gae_lambda=0.95, log_interval=1, lr=0.0001, max_grad_norm=0.5, mem=True, model='modelName2', no_wandb=False, optim_alpha=0.99, optim_eps=1e-08, procs=32, recurrence=64, save_interval=10, seed=1, text=False, value_loss_coef=0.5)
+
+Device: cuda
+
+Environments loaded
+
+Training status loaded
+
+Model loaded
+
+ACModel(
+  (image_conv): Sequential(
+    (0): Conv2d(3, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (1): ELU(alpha=1.0)
+    (2): Conv2d(32, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (3): ELU(alpha=1.0)
+    (4): Conv2d(32, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (5): ELU(alpha=1.0)
+    (6): Conv2d(32, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (7): ELU(alpha=1.0)
+  )
+  (memory_rnn1): LSTMCell(288, 256)
+  (memory_rnn2): LSTMCell(288, 256)
+  (actor): Sequential(
+    (0): Linear(in_features=256, out_features=64, bias=True)
+    (1): Tanh()
+    (2): Linear(in_features=64, out_features=4, bias=True)
+  )
+  (critic): Sequential(
+    (0): Linear(in_features=256, out_features=64, bias=True)
+    (1): Tanh()
+    (2): Linear(in_features=64, out_features=1, bias=True)
+  )
+)
+
+using MLP layer as FFN
+Optimizer loaded
+
+U 1 | F 008192 | FPS 0037 | D 222 | rR:μσmM 0.00 0.00 0.00 0.00 | F:μσmM 0.0 0.0 0 0 | H 1.386 | V 0.125 | pL -0.085 | vL 0.003 | ∇ 0.026
+U 2 | F 016384 | FPS 0038 | D 438 | rR:μσmM 0.00 0.00 0.00 0.00 | F:μσmM 0.0 0.0 0 0 | H 1.386 | V 0.172 | pL -0.041 | vL 0.003 | ∇ 0.033
+U 3 | F 024576 | FPS 0040 | D 640 | rR:μσmM -0.21 0.00 -0.21 -0.21 | F:μσmM 525.0 0.0 525.0 525.0 | H 1.384 | V 0.180 | pL -0.022 | vL 0.001 | ∇ 0.017
+U 4 | F 032768 | FPS 0031 | D 903 | rR:μσmM -0.21 0.00 -0.21 -0.21 | F:μσmM 525.0 0.0 525.0 525.0 | H 1.385 | V 0.191 | pL -0.013 | vL 0.002 | ∇ 0.029
+U 5 | F 040960 | FPS 0040 | D 1110 | rR:μσmM -0.21 0.00 -0.21 -0.21 | F:μσmM 525.0 0.0 525.0 525.0 | H 1.385 | V 0.192 | pL -0.003 | vL 0.001 | ∇ 0.022
+U 6 | F 049152 | FPS 0038 | D 1324 | rR:μσmM -0.21 0.00 -0.21 -0.21 | F:μσmM 525.0 0.0 525.0 525.0 | H 1.385 | V 0.180 | pL 0.006 | vL 0.001 | ∇ 0.021
+U 7 | F 057344 | FPS 0039 | D 1535 | rR:μσmM -0.21 0.00 -0.21 -0.21 | F:μσmM 525.0 0.0 525.0 525.0 | H 1.385 | V 0.182 | pL 0.011 | vL 0.001 | ∇ 0.014
+U 8 | F 065536 | FPS 0039 | D 1745 | rR:μσmM -0.21 0.00 -0.21 -0.21 | F:μσmM 525.0 0.0 525.0 525.0 | H 1.385 | V 0.171 | pL 0.002 | vL 0.001 | ∇ 0.024
+U 9 | F 073728 | FPS 0038 | D 1960 | rR:μσmM -0.21 0.00 -0.21 -0.21 | F:μσmM 525.0 0.0 525.0 525.0 | H 1.383 | V 0.164 | pL 0.021 | vL 0.002 | ∇ 0.017
+U 10 | F 081920 | FPS 0038 | D 2177 | rR:μσmM -0.21 0.00 -0.21 -0.21 | F:μσmM 525.0 0.0 525.0 525.0 | H 1.382 | V 0.149 | pL 0.004 | vL 0.001 | ∇ 0.023
+Status saved
+U 11 | F 090112 | FPS 0038 | D 2391 | rR:μσmM -0.21 0.00 -0.21 -0.21 | F:μσmM 525.0 0.0 525.0 525.0 | H 1.376 | V 0.150 | pL 0.020 | vL 0.001 | ∇ 0.017
+U 12 | F 098304 | FPS 0040 | D 2595 | rR:μσmM -0.21 0.00 -0.21 -0.21 | F:μσmM 525.0 0.0 525.0 525.0 | H 1.378 | V 0.120 | pL 0.004 | vL 0.001 | ∇ 0.015

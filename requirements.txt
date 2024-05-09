@@ -1,0 +1,12 @@
+torch-ac>=1.4.0
+torchvision
+tensorboardX>=1.6
+numpy==1.22.4
+gymnasium>=0.26
+wandb
+moviepy
+imageio
+vizdoom==1.2.3
+scikit-learn
+matplotlib
+gym==0.26.2
